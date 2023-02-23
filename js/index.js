@@ -4,7 +4,7 @@
 
 // title
 
-let logo = ui.img("https://yart.rfs2iscool.repl.co/assets/gui/mclogo.png", sui);
+let logo = ui.img("assets/gui/mclogo.png", sui);
 addToScreen(logo, 0);
 logo.classList.add("logo");
 

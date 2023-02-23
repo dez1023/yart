@@ -38,7 +38,7 @@
 .bbtn {
   width: 400px;
   height: 40px;
-  background: url(https://yart.rfs2iscool.repl.co/assets/gui/btn.png);
+  background: url(assets/gui/btn.png);
   background-position: 50% 0;
   background-repeat: no-repeat;
   background-size: cover;
@@ -48,7 +48,7 @@
   width: 190px;
   height: 42px;
   clear: none;
-  background: url(https://yart.rfs2iscool.repl.co/assets/gui/sbtn.png);
+  background: url(assets/gui/sbtn.png);
   background-position: 50% 0;
   background-repeat: no-repeat;
   background-size: cover;
