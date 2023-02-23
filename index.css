@@ -1,0 +1,102 @@
+.ui {
+  width: 100vw;
+  height: 100vh;
+}
+
+.sui {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 700px;
+  height: calc(500px);
+}
+
+.logo {
+  display: block;
+  image-rendering: pixelated;
+  width: auto;
+  height: 150px;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.bbtn,
+.sbtn, .sbtn2 {
+  all: unset;
+  display: block;
+  position: relative;
+  left: 0;
+  top: 0;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  image-rendering: pixelated;
+}
+
+.bbtn {
+  width: 400px;
+  height: 40px;
+  background: url(https://yart.rfs2iscool.repl.co/assets/gui/btn.png);
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.sbtn, .sbtn2 {
+  width: 190px;
+  height: 42px;
+  clear: none;
+  background: url(https://yart.rfs2iscool.repl.co/assets/gui/sbtn.png);
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: translate(-105px, 0);
+}
+
+.bbtn:not(.dis):hover {
+  background-position: 50% -40px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.sbtn2 {
+  transform: translate(105px, 0);
+  margin-top: -52px;
+}
+
+.sbtn:not(.dis):hover, .sbtn2:not(.dis):hover {
+  background-position: 50% -41px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bbtn:not(.dis):hover .txt {
+  color: #ffff96;
+}
+
+.sbtn:not(.dis):hover .txt, .sbtn2:not(.dis):hover .txt {
+  color: #ffff96;
+}
+
+.bbtn.dis {
+  background-position: 50% -80px;
+}
+
+.sbtn.dis,sbtn2.dis {
+  background-position: 50% -84px;
+}
+
+.txt {
+  color: white;
+  text-align: center;
+  margin: auto;
+  user-select: none;
+  font-family: Minecraftia, serif;
+  font-size: 14px;
+  transform: translate(0,-1px);
+  margin-bottom: 2px;
+  text-shadow: 2px 2px black;
+  text-decoration: none;
+}
