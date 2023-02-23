@@ -1,4 +1,4 @@
-const a = "https://dez1023.github.io/yart/"
+let a = "https://dez1023.github.io/yart/"
 
 let ui = {
   e: function(el, p) {
@@ -12,7 +12,7 @@ let ui = {
   },
   img: function(sc, p) {
     let e = ui.e("img", p)
-    e.src = a+sc
+    e.src = a+sc;
     return e;
   },
   a: function(t, p) {
