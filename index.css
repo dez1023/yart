@@ -9,7 +9,7 @@
   top: 50%;
   transform: translate(-50%,-50%);
   width: 700px;
-  height: calc(500px);
+  height: 100vh;
 }
 
 .logo {
@@ -18,11 +18,11 @@
   width: auto;
   height: 150px;
   margin: auto;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
 }
 
 .bbtn,
-.sbtn, .sbtn2 {
+.sbtn, .sbtn2, .mbtn, .mbtn2 {
   all: unset;
   display: block;
   position: relative;
@@ -55,7 +55,19 @@
   transform: translate(-105px, 0);
 }
 
-.bbtn:not(.dis):hover {
+.mbtn, .mbtn2 {
+  width: 300px;
+  height: 40px;
+  clear: none;
+  background: url(https://dez1023.github.io/yart/assets/gui/mbtn.png);
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: translate(-160px, 0);
+}
+
+.bbtn:not(.dis):hover,
+.mbtn:not(.dis):hover, .mbtn2:not(.dis):hover {
   background-position: 50% -40px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -66,21 +78,26 @@
   margin-top: -52px;
 }
 
+.mbtn2 {
+  transform: translate(160px, 0);
+  margin-top: -50px;
+}
+
 .sbtn:not(.dis):hover, .sbtn2:not(.dis):hover {
   background-position: 50% -41px;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.bbtn:not(.dis):hover .txt {
+.bbtn:not(.dis):hover .txt,
+.sbtn:not(.dis):hover .txt, .sbtn2:not(.dis):hover .txt,
+.mbtn:not(.dis):hover .txt,
+.mbtn2:not(.dis):hover .txt
+{
   color: #ffff96;
 }
 
-.sbtn:not(.dis):hover .txt, .sbtn2:not(.dis):hover .txt {
-  color: #ffff96;
-}
-
-.bbtn.dis {
+.bbtn.dis, .mbtn.dis, .mbtn2.dis {
   background-position: 50% -80px;
 }
 
@@ -95,8 +112,7 @@
   user-select: none;
   font-family: Minecraftia, serif;
   font-size: 14px;
-  transform: translate(0,-1px);
-  margin-bottom: 2px;
+  transform: translate(0,-2px);
   text-shadow: 2px 2px black;
   text-decoration: none;
 }

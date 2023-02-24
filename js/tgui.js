@@ -40,7 +40,7 @@ let ui = {
     e.classList.add("bbtn");
     return e;
   },
-  btns: function(p, t, s, f, t2, s2, f2) {
+  sbtns: function(p, t, s, f, t2, s2, f2) {
     let cont = ui.div(p)
     cont.classList.add("btns")
 
@@ -53,9 +53,23 @@ let ui = {
     e2.classList.add("sbtn2")
     return cont;
   },
-  slider: function(t, p, s, f) {
-    let e = ui.btn("", p, s, f);
+  mbtns: function(p, t, s, f, t2, s2, f2) {
+    let cont = ui.div(p)
+    cont.classList.add("btns")
+
+    let e = ui.btn("", cont, s, f);
     let txt = ui.txt(t, e, s);
+    e.classList.add("mbtn");
+
+    let e2 = ui.btn("", cont, s2, f2);
+    let txt2 = ui.txt(t2, e2, s2);
+    e2.classList.add("mbtn2")
+    return cont;
+  },
+  slider: function(t, p, s, f) {
+    let cont = ui.div(p)
+    let e = ui.e("input",cont);
+    let txt = ui.txt(t, cont, s);
     e.classList.add("slider");
     return e;
   },
