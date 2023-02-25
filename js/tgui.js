@@ -40,38 +40,38 @@ let ui = {
     e.classList.add("bbtn");
     return e;
   },
-  sbtns: function(p, t, s, f, t2, s2, f2) {
-    let cont = ui.div(p)
-    cont.classList.add("btns")
-
-    let e = ui.btn("", cont, s, f);
-    let txt = ui.txt(t, e, s);
-    e.classList.add("sbtn");
-
-    let e2 = ui.btn("", cont, s2, f2);
-    let txt2 = ui.txt(t2, e2, s2);
-    e2.classList.add("sbtn2")
-    return cont;
-  },
-  mbtns: function(p, t, s, f, t2, s2, f2) {
-    let cont = ui.div(p)
-    cont.classList.add("btns")
-
-    let e = ui.btn("", cont, s, f);
+  mbtn: function(t, p, s, f) {
+    let e = ui.btn("", p, s, f);
     let txt = ui.txt(t, e, s);
     e.classList.add("mbtn");
+    return e;
+  },
+  sbtn: function(t, p, s, f) {
+    let e = ui.btn("", p, s, f);
+    let txt = ui.txt(t, e, s);
+    e.classList.add("sbtn");
+    return e;
+  },
+  btns: function(p, s, ty, t, f, ty2, t2, f2) {
+    let cont = ui.div(p)
+    cont.classList.add("btns")
 
-    let e2 = ui.btn("", cont, s2, f2);
-    let txt2 = ui.txt(t2, e2, s2);
-    e2.classList.add("mbtn2")
+    let e = ui[ty](t, cont, s, f);
+    e.classList.add("left");
+
+    let e2 = ui[ty2](t2, cont, s, f2);
+    e2.classList.add("right")
     return cont;
   },
-  slider: function(t, p, s, f) {
+  sli: function(t, p, s, v) {
     let cont = ui.div(p)
-    let e = ui.e("input",cont);
+    let e = ui.e("input", cont);
     let txt = ui.txt(t, cont, s);
-    e.classList.add("slider");
-    return e;
+    addToScreen(e, s)
+    cont.classList.add("scont")
+    e.classList.add("sli");
+    e.type = "range"
+    return cont;
   },
 }
 
@@ -109,7 +109,7 @@ function disable(e) {
   e.onclick = null;
 }
 
-function n() { }
+function n() {}
 
 let s = [
   [], // title

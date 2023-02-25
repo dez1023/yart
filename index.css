@@ -7,7 +7,7 @@
   position: fixed;
   left: 50%;
   top: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   width: 700px;
   height: 100vh;
 }
@@ -21,14 +21,16 @@
   margin-bottom: 80px;
 }
 
+/* defaults */
+
 .bbtn,
-.sbtn, .sbtn2, .mbtn, .mbtn2 {
+.sbtn,
+.mbtn {
   all: unset;
   display: block;
   position: relative;
   left: 0;
   top: 0;
-  text-align: center;
   margin: auto;
   margin-bottom: 10px;
   margin-top: 10px;
@@ -44,65 +46,57 @@
   background-size: cover;
 }
 
-.sbtn, .sbtn2 {
-  width: 190px;
-  height: 42px;
-  clear: none;
+.sbtn {
+  width: 184px;
+  height: 40px;
   background: url(https://dez1023.github.io/yart/assets/gui/sbtn.png);
   background-position: 50% 0;
   background-repeat: no-repeat;
   background-size: cover;
-  transform: translate(-105px, 0);
 }
 
-.mbtn, .mbtn2 {
+.mbtn {
   width: 300px;
   height: 40px;
-  clear: none;
   background: url(https://dez1023.github.io/yart/assets/gui/mbtn.png);
   background-position: 50% 0;
   background-repeat: no-repeat;
   background-size: cover;
-  transform: translate(-160px, 0);
 }
 
-.bbtn:not(.dis):hover,
-.mbtn:not(.dis):hover, .mbtn2:not(.dis):hover {
-  background-position: 50% -40px;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.sbtn2 {
-  transform: translate(105px, 0);
-  margin-top: -52px;
-}
-
-.mbtn2 {
-  transform: translate(160px, 0);
-  margin-top: -50px;
-}
-
-.sbtn:not(.dis):hover, .sbtn2:not(.dis):hover {
-  background-position: 50% -41px;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.bbtn:not(.dis):hover .txt,
-.sbtn:not(.dis):hover .txt, .sbtn2:not(.dis):hover .txt,
-.mbtn:not(.dis):hover .txt,
-.mbtn2:not(.dis):hover .txt
-{
-  color: #ffff96;
-}
-
-.bbtn.dis, .mbtn.dis, .mbtn2.dis {
+.sli {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 100%;
+  background: url(https://dez1023.github.io/yart/assets/gui/mbtn.png);
   background-position: 50% -80px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.sbtn.dis,sbtn2.dis {
-  background-position: 50% -84px;
+.sli::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 40px;
+  background: url(https://dez1023.github.io/yart/assets/gui/slider.png);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.sli::-webkit-slider-thumb:hover {
+  background-position: -16px 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.scont {
+  width: 300px;
+  height: 40px;
+  margin: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .txt {
@@ -112,7 +106,80 @@
   user-select: none;
   font-family: Minecraftia, serif;
   font-size: 14px;
-  transform: translate(0,-2px);
+  transform: translate(0, -2px);
   text-shadow: 2px 2px black;
   text-decoration: none;
+}
+
+.scont > .txt {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* right and left */
+
+.sbtn.right {
+  transform: translate(105px, 0);
+  margin-top: -50px;
+}
+
+.sbtn.left {
+  transform: translate(-105px, 0);
+}
+
+.mbtn.right {
+  transform: translate(160px, 0);
+  margin-top: -50px;
+}
+
+.mbtn.left {
+  transform: translate(-160px, 0);
+}
+
+.scont.right {
+  transform: translate(160px, 0);
+  margin-top: -50px;
+}
+
+.scont.left {
+  transform: translate(-160px, 0);
+}
+
+/* hover */
+
+.bbtn:not(.dis):hover,
+.mbtn:not(.dis):hover {
+  background-position: 50% -40px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.sbtn:not(.dis):hover {
+  background-position: 50% -40px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.scont:hover > .txt {
+  color: #ffff96;
+}
+
+
+.bbtn:not(.dis):hover .txt,
+.sbtn:not(.dis):hover .txt,
+.mbtn:not(.dis):hover .txt {
+  color: #ffff96;
+}
+
+.bbtn.dis,
+.mbtn.dis {
+  background-position: 50% -80px;
+}
+
+.sbtn.dis,
+  {
+  background-position: 50% -80px;
 }
