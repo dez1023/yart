@@ -5,3 +5,11 @@ function getRandomArbitrary(min, max) {
 function round(x) {
   return Math.floor(x + 0.5)
 }
+
+function dtr(n) {
+  return THREE.MathUtils.degToRad(n);
+}
+
+function tick() {
+   return new Date().getTime();
+}

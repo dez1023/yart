@@ -1,30 +1,49 @@
 const panScene = new THREE.Scene();
 const panCam = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
+/*
 let panMatArray = [
-  new THREE.MeshBasicMaterial( { map: tload.load( assets+'title/bg/pan1.jpg') }),
+  new THREE.MeshBasicMaterial( { map: tload.load( assets+'title/bg/pan1.png') }),
+  new THREE.MeshBasicMaterial( { map: tload.load( assets+'title/bg/pan2.png') }),
+  new THREE.MeshBasicMaterial( { map: tload.load( assets+'title/bg/pan3.png') }),
+  new THREE.MeshBasicMaterial( { map: tload.load( assets+'title/bg/pan4.png') }),
+  new THREE.MeshBasicMaterial( { map: tload.load( assets+'title/bg/pan5.png') }),
+  new THREE.MeshBasicMaterial( { map: tload.load( assets+'title/bg/pan6.png') }),
 ];
 
-const geometry = new THREE.BoxGeometry(1, 1, 1);
-const material = new THREE.MeshBasicMaterial({
-  color: 0x00ff00
-});
+for (let i = 0; i < 6; i++)
+  panMatArray[i].side = THREE.BackSide;
 
-const cube = new THREE.Mesh(geometry, material);
-panScene.add(cube);
+const geometry = new THREE.BoxGeometry(1000, 1000, 1000);
+const panorama = new THREE.Mesh(geometry, panMatArray);
+panScene.add(panorama);
+*/
+
+let blur = ui.div(db);
+blur.classList.add("blur")
+
+panScene.background = ctload.load([
+  assets+"title/bg/pan2.png",
+  assets+"title/bg/pan4.png",
+  assets+"title/bg/pan5.png",
+  assets+"title/bg/pan6.png",
+  assets+"title/bg/pan1.png",
+  assets+"title/bg/pan3.png",
+])
 
 function updatePanCam() {
   panCam.aspect = renderer.domElement.clientWidth / renderer.domElement.clientHeight;
   panCam.updateProjectionMatrix();
 }
 
+panCam.rotation.order = "YXZ"
+
 function renderPan() {
   updatePanCam()
   requestAnimationFrame(renderPan);
-
-  cube.rotation.x += 0.01;
-  cube.rotation.y += 0.01;
-
+  //panCam.rotation.x = dtr(-30);
+  panCam.rotation.y = dtr(tick()/500)
+  panCam.rotation.x = dtr((Math.sin(tick()/10000)*15)-30)
   renderer.render(panScene, panCam);
 }
 
