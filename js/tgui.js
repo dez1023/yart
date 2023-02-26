@@ -10,7 +10,7 @@ let ui = {
   },
   img: function(sc, p) {
     let e = ui.e("img", p)
-    e.src = assets + sc;
+    e.src = sc;
     return e;
   },
   a: function(t, p) {
