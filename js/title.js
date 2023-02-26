@@ -2,11 +2,11 @@
 
 // title
 
-let logo = ui.img(assets+"/title/mclogo.png", sui);
+let logo = ui.img("title/mclogo.png", sui);
 addToScreen(logo, 0);
 logo.classList.add("logo");
 
-fetch('assets/splashes.txt')
+fetch(assets+'splashes.txt')
   .then(response => response.text())
   .then((data) => {
     let lines = data.split(/\r?\n|\r|\n/g);

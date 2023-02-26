@@ -1,5 +1,3 @@
-let a = "https://dez1023.github.io/yart/"
-
 let ui = {
   e: function(el, p) {
     let e = document.createElement(el);
@@ -12,7 +10,7 @@ let ui = {
   },
   img: function(sc, p) {
     let e = ui.e("img", p)
-    e.src = a + sc;
+    e.src = assets + sc;
     return e;
   },
   a: function(t, p) {
