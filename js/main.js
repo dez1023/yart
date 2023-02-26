@@ -1,0 +1,1 @@
+const assets = "https://dez1023.github.io/assets/"

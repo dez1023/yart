@@ -70,7 +70,10 @@ let ui = {
     addToScreen(e, s)
     cont.classList.add("scont")
     e.classList.add("sli");
-    e.type = "range"
+    e.type = "range";
+    e.min = v[0];
+    e.max = v[1];
+    e.value = v[2];
     return cont;
   },
 }
@@ -80,6 +83,13 @@ let db = document.getElementById("ui")
 let sui = ui.div(db)
 sui.classList.add("sui")
 sui.id = "sui"
+
+function setSlider(sli, a, t, v) {
+  sli.addEventListener("input", function() {
+    gs[v] = sli.value;
+sli.parentNode.querySelector(".txt").innerHTML = a + sli.value + t;
+  })
+}
 
 function updateScreens() {
   s.forEach(function(sc, i) {
@@ -93,6 +103,11 @@ function updateScreens() {
       })
     }
   })
+  if (cs == 0) {
+    sui.style.height = "calc(100vh - 100px)"
+  }else{
+    sui.style.height = "calc(100vh + 50px)"
+  }
 }
 
 function addToScreen(e, sn) {
@@ -109,11 +124,10 @@ function disable(e) {
   e.onclick = null;
 }
 
-function n() {}
+function n() { }
 
 let s = [
   [], // title
-  [], // worlds
   [], // multiplayer
   [], // options
 ]

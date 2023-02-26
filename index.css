@@ -1,3 +1,7 @@
+html, body {
+  overflow: hidden;
+}
+
 .ui {
   width: 100vw;
   height: 100vh;
@@ -9,7 +13,16 @@
   top: 50%;
   transform: translate(-50%, -50%);
   width: 700px;
-  height: 100vh;
+  height: calc(100vh - 100px);
+}
+
+.render {
+  position: fixed;
+  display: block;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -10;
 }
 
 .logo {
@@ -119,15 +132,36 @@
   pointer-events: none;
 }
 
+.splash {
+  position: fixed;
+  white-space: nowrap;
+  color: yellow;
+  text-align: center;
+  left: 50px;
+  top: 100px;
+  transform: rotate(-15deg);
+  width: 1000px;
+  animation-name: splashanim;
+  animation-duration: 0.3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in;
+}
+
+@keyframes splashanim {
+  0% {transform: scale(1) rotate(-15deg);}
+  100% {transform: scale(1.075) rotate(-15deg);}
+}
+
 /* right and left */
 
 .sbtn.right {
-  transform: translate(105px, 0);
+  transform: translate(108px, 0);
   margin-top: -50px;
 }
 
 .sbtn.left {
-  transform: translate(-105px, 0);
+  transform: translate(-108px, 0);
 }
 
 .mbtn.right {
