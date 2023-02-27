@@ -124,7 +124,7 @@ body {
   margin-top: 10px;
 }
 
-.lang {
+.ssbtn {
   background: url(https://dez1023.github.io/yart/assets/gui/ssbtn.png);
   width: 40px;
   height: 40px;
@@ -135,7 +135,7 @@ body {
   background-size: cover;
 }
 
-.lang img {
+.ssbtn img {
   width: 100%;
   height: 100%;
   image-rendering: pixelated;

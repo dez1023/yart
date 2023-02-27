@@ -50,9 +50,10 @@ let ui = {
     e.classList.add("sbtn");
     return e;
   },
-  ssbtn: function(p, s, f) {
+  ssbtn: function(p, s, f, sc) {
     let e = ui.btn("", p, s, f);
     e.classList.add("ssbtn");
+    let img = ui.img(sc, e);
     return e;
   },
   btns: function(p, s, ty, t, f, ty2, t2, f2) {
