@@ -38,6 +38,11 @@ let ui = {
     e.classList.add("bbtn");
     return e;
   },
+  lang: function(p, s, f) {
+    let e = ui.btn("", p, s, f);
+    e.classList.add("lang");
+    return e;
+  },
   mbtn: function(t, p, s, f) {
     let e = ui.btn("", p, s, f);
     let txt = ui.txt(t, e, s);
