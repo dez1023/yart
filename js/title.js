@@ -34,7 +34,7 @@
         window.close()
       });
       tsbtns.style.marginTop = "50px"
-       ui.ssbtn(sui,0,n)
+       ui.ssbtn(sui,0,n,assets+"ssicons.png",0)
 
       // servers
       ui.txt("Play Multiplayer", sui, 1, 16);

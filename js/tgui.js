@@ -50,10 +50,14 @@ let ui = {
     e.classList.add("sbtn");
     return e;
   },
-  ssbtn: function(p, s, f, sc) {
+  ssbtn: function(p, s, f, sc, y) {
     let e = ui.btn("", p, s, f);
     e.classList.add("ssbtn");
-    let img = ui.img(sc, e);
+    let im = ui.div(sc, e);
+    im.style.background = "url("+sc+");";
+    im.style.backgroundRepeat = "norepeat";
+    im.style.backgroundSize = "cover";
+    im.style.backgroundPosition = "0, "+y+"px;"
     return e;
   },
   btns: function(p, s, ty, t, f, ty2, t2, f2) {
