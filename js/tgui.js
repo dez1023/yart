@@ -38,11 +38,6 @@ let ui = {
     e.classList.add("bbtn");
     return e;
   },
-  lang: function(p, s, f) {
-    let e = ui.btn("", p, s, f);
-    e.classList.add("lang");
-    return e;
-  },
   mbtn: function(t, p, s, f) {
     let e = ui.btn("", p, s, f);
     let txt = ui.txt(t, e, s);
@@ -53,6 +48,11 @@ let ui = {
     let e = ui.btn("", p, s, f);
     let txt = ui.txt(t, e, s);
     e.classList.add("sbtn");
+    return e;
+  },
+  ssbtn: function(p, s, f) {
+    let e = ui.btn("", p, s, f);
+    e.classList.add("ssbtn");
     return e;
   },
   btns: function(p, s, ty, t, f, ty2, t2, f2) {
