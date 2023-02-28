@@ -117,7 +117,7 @@ let ui = {
           }
         })
         if (cs == 0) {
-          sui.style.height = "calc(100vh - 200px)"
+          sui.style.height = "calc(50vh + 200px)"
         } else {
           sui.style.height = "calc(100vh + 50px)"
         }

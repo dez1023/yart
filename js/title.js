@@ -17,7 +17,7 @@
           let splash = lines[rand];
           //let splash = lines[1]
           let len = splash.length
-          len = 30 - (len / 2)
+          len = 30 - (len / 1.5)
           //console.log(len)
           let spltxt = ui.txt(splash, sui, 0, len);
           spltxt.classList.add("splash")
@@ -27,6 +27,7 @@
       disable(ui.bbtn("Multiplayer", sui, 0, function() {
         setScreen(1)
       }))
+disable(ui.bbtn("Minecraft Realms", sui, 0, n))
 
       let tsbtns = ui.btns(sui, 0, "sbtn", "Options...", function() {setScreen(2)}, "sbtn", "Quit Game", function() {window.close()});
       tsbtns.style.marginTop = "50px"

@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "name": "stone",
+    "tx": "stone.png"
+    "hardness": 1.5,
+  },
+  {
+    "id": 2,
+    "name": "grass",
+    "toptx": "grass_top.png",
+    "sidetx": "grass.png",
+    "btmtx": "dirt.png",
+    "hardness": 0.6,
+  },
+  {
+    "id": 3,
+    "name": "dirt",
+    "tx": "dirt.png",
+    "hardness": 0.5,
+  },
+  {
+    "id": 4,
+    "name": "cobblestone",
+    "tx": "cobblestone.png"
+    "hardness": 2,
+  },
+  {
+    "id": 5,
+    "name": "planks",
+    "tx": "planks.png"
+    "hardness": 2,
+  },
+  {
+    "id": 12,
+    "name": "sand",
+    "tx": "sand.png",
+    "hardness": 0.5,
+  },
+  {
+    "id": 13,
+    "name": "gravel",
+    "tx": "gravel.png",
+    "hardness": 0.6,
+  },
+  {
+    "id": 17,
+    "name": "wood",
+    "toptx": "wood_top.png",
+    "sidetx": "wood.png",
+    "btmtx": "wood_top.png",
+    "hardness": 2,
+  },
+]
