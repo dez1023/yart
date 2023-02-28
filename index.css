@@ -193,12 +193,12 @@ body {
 /* right and left */
 
 .sbtn.right {
-  transform: translate(108px, 0);
+  transform: translate(105px, 0);
   margin-top: -50px;
 }
 
 .sbtn.left {
-  transform: translate(-108px, 0);
+  transform: translate(-105px, 0);
 }
 
 .mbtn.right {
@@ -220,11 +220,11 @@ body {
 }
 
 .ssbtn.right {
-  transform: translate(250px, 0);
+  transform: translate(235px, 0);
 }
 
 .ssbtn.left {
-  transform: translate(-250px, 0);
+  transform: translate(-235px, 0);
 }
 
 /* hover */
