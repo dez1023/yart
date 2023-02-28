@@ -1,26 +1,9 @@
 const panScene = new THREE.Scene();
 const panCam = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-/*
-let panMatArray = [
-  new THREE.MeshBasicMaterial( { map: tload.load( assets+'title/bg/pan1.png') }),
-  new THREE.MeshBasicMaterial( { map: tload.load( assets+'title/bg/pan2.png') }),
-  new THREE.MeshBasicMaterial( { map: tload.load( assets+'title/bg/pan3.png') }),
-  new THREE.MeshBasicMaterial( { map: tload.load( assets+'title/bg/pan4.png') }),
-  new THREE.MeshBasicMaterial( { map: tload.load( assets+'title/bg/pan5.png') }),
-  new THREE.MeshBasicMaterial( { map: tload.load( assets+'title/bg/pan6.png') }),
-];
-
-for (let i = 0; i < 6; i++)
-  panMatArray[i].side = THREE.BackSide;
-
-const geometry = new THREE.BoxGeometry(1000, 1000, 1000);
-const panorama = new THREE.Mesh(geometry, panMatArray);
-panScene.add(panorama);
-*/
-
 let blur = ui.div(db);
 blur.classList.add("blur")
+addToScreen(blur,0)
 
 panScene.background = ctload.load([
   assets+"title/bg/pan2.png",
@@ -34,6 +17,7 @@ panScene.background = ctload.load([
 function updatePanCam() {
   panCam.aspect = renderer.domElement.clientWidth / renderer.domElement.clientHeight;
   panCam.updateProjectionMatrix();
+  renderer.setSize(innerWidth,innerHeight);
 }
 
 panCam.rotation.order = "YXZ"

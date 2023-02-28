@@ -24,17 +24,14 @@
         })
 
       ui.bbtn("Singleplayer", sui, 0, n);
-      ui.bbtn("Multiplayer", sui, 0, function() {
+      disable(ui.bbtn("Multiplayer", sui, 0, function() {
         setScreen(1)
-      })
+      }))
 
-      let tsbtns = ui.btns(sui, 0, "sbtn", "Options...", function() {
-        setScreen(2)
-      }, "sbtn", "Quit Game", function() {
-        window.close()
-      });
+      let tsbtns = ui.btns(sui, 0, "sbtn", "Options...", function() {setScreen(2)}, "sbtn", "Quit Game", function() {window.close()});
       tsbtns.style.marginTop = "50px"
-       ui.ssbtn(sui,0,n,assets+"ssicons.png",0)
+      ui.ssbtn(sui,0,n,assets+"gui/ssicons.png",0,1);
+      ui.ssbtn(sui,0,n,assets+"gui/ssicons.png",-40,2);
 
       // servers
       ui.txt("Play Multiplayer", sui, 1, 16);
