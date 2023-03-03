@@ -1,6 +1,8 @@
 const panScene = new THREE.Scene();
 const panCam = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
+setScene(panScene,panCam,renderPan)
+
 let blur = ui.div(db);
 blur.classList.add("blur")
 addToScreen(blur,0)
@@ -24,11 +26,7 @@ panCam.rotation.order = "YXZ"
 
 function renderPan() {
   updatePanCam()
-  requestAnimationFrame(renderPan);
   //panCam.rotation.x = dtr(-30);
   panCam.rotation.y = dtr(tick()/500)
   panCam.rotation.x = dtr((Math.sin(tick()/10000)*15)-30)
-  renderer.render(panScene, panCam);
 }
-
-renderPan();

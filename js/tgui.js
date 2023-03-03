@@ -128,8 +128,13 @@ let ui = {
       }
 
       function setScreen(sn) {
-        cs = sn;
-        updateScreens();
+        if (sn!=null) {
+          cs = sn;
+          updateScreens();
+        }else{
+          cs = -1;
+          updateScreens();
+        }
       }
 
       function disable(e) {

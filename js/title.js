@@ -23,7 +23,7 @@
           spltxt.classList.add("splash")
         })
 
-      ui.bbtn("Singleplayer", sui, 0, n);
+      ui.bbtn("Singleplayer", sui, 0, initSP);
       disable(ui.bbtn("Multiplayer", sui, 0, function() {
         setScreen(1)
       }))

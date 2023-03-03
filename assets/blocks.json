@@ -7,7 +7,7 @@
   },
   {
     "id": 2,
-    "name": "grass",
+    "name": "grass_block",
     "toptx": "grass_top.png",
     "sidetx": "grass.png",
     "btmtx": "dirt.png",
