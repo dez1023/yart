@@ -2,8 +2,8 @@
   {
     "id": 1,
     "name": "stone",
-    "tx": "stone.png"
-    "hardness": 1.5,
+    "tx": "stone.png",
+    "hardness": 1.5
   },
   {
     "id": 2,
@@ -11,37 +11,37 @@
     "toptx": "grass_top.png",
     "sidetx": "grass.png",
     "btmtx": "dirt.png",
-    "hardness": 0.6,
+    "hardness": 0.6
   },
   {
     "id": 3,
     "name": "dirt",
     "tx": "dirt.png",
-    "hardness": 0.5,
+    "hardness": 0.5
   },
   {
     "id": 4,
     "name": "cobblestone",
-    "tx": "cobblestone.png"
-    "hardness": 2,
+    "tx": "cobblestone.png",
+    "hardness": 2
   },
   {
     "id": 5,
     "name": "planks",
-    "tx": "planks.png"
-    "hardness": 2,
+    "tx": "planks.png",
+    "hardness": 2
   },
   {
     "id": 12,
     "name": "sand",
     "tx": "sand.png",
-    "hardness": 0.5,
+    "hardness": 0.5
   },
   {
     "id": 13,
     "name": "gravel",
     "tx": "gravel.png",
-    "hardness": 0.6,
+    "hardness": 0.6
   },
   {
     "id": 17,
@@ -49,6 +49,6 @@
     "toptx": "wood_top.png",
     "sidetx": "wood.png",
     "btmtx": "wood_top.png",
-    "hardness": 2,
-  },
+    "hardness": 2
+  }
 ]
