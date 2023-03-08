@@ -1,1 +1,3 @@
-const assets = "https://dez1023.github.io/yart/assets/"
+//const address = "https://yart.rfs2iscool.repl.co/"
+const address = "https://dez1023.github.io/yart/"
+const assets = address+"assets/"

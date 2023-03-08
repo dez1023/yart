@@ -10,7 +10,7 @@
         .then(response => response.text())
         .then((data) => {
           let lines = data.split(/\r?\n|\r|\n/g);
-          let rand = round(getRandomArbitrary(0, lines.length))
+          let rand = round(random(0, lines.length))
           if (rand == 222) {
             rand = 223
           }

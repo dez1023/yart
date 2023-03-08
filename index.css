@@ -190,6 +190,16 @@ body {
   }
 }
 
+@keyframes hideLoad {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 /* right and left */
 
 .sbtn.right {

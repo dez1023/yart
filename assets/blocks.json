@@ -1,54 +1,178 @@
 [
   {
+    "id": -2,
+    "displayName": "bruh",
+    "name": "bruh",
+    "tx": "bruh.png",
+    "display": null
+  },
+  {
+    "id": -1,
+    "displayName": "null",
+    "name": "null",
+    "tx": "null.png",
+    "display": null
+  },
+  {
     "id": 1,
+    "displayName": "Stone",
     "name": "stone",
     "tx": "stone.png",
+    "display": "block",
     "hardness": 1.5
   },
   {
     "id": 2,
+    "displayName": "Grass Block",
     "name": "grass_block",
     "toptx": "grass_top.png",
     "sidetx": "grass.png",
     "btmtx": "dirt.png",
-    "hardness": 0.6
+    "hardness": 0.6,
+    "display": "block",
+    "bcTop": true
   },
   {
     "id": 3,
+    "displayName": "Dirt",
     "name": "dirt",
     "tx": "dirt.png",
+    "display": "block",
     "hardness": 0.5
   },
   {
     "id": 4,
+    "displayName": "Cobblestone",
     "name": "cobblestone",
     "tx": "cobblestone.png",
+    "display": "block",
     "hardness": 2
   },
   {
     "id": 5,
+    "displayName": "Wood Planks",
     "name": "planks",
     "tx": "planks.png",
+    "display": "block",
     "hardness": 2
   },
   {
+    "id": 6,
+    "displayName": "Sapling",
+    "name": "sapling",
+    "tx": "sapling.png",
+    "display": "plant",
+    "hardness": 2
+  },
+  {
+    "id": 7,
+    "displayName": "Bedrock",
+    "name": "bedrock",
+    "tx": "bedrock.png",
+    "display": "block",
+    "hardness": null
+  },
+  {
     "id": 12,
+    "displayName": "Sand",
     "name": "sand",
     "tx": "sand.png",
+    "display": "block",
     "hardness": 0.5
   },
   {
     "id": 13,
+    "displayName": "Gravel",
     "name": "gravel",
     "tx": "gravel.png",
+    "display": "block",
     "hardness": 0.6
   },
   {
+    "id": 14,
+    "displayName": "Gold Ore",
+    "name": "gold_ore",
+    "tx": "gold_ore.png",
+    "display": "block",
+    "hardness": 3
+  },
+  {
+    "id": 15,
+    "displayName": "Iron Ore",
+    "name": "iron_ore",
+    "tx": "iron_ore.png",
+    "display": "block",
+    "hardness": 3
+  },
+  {
+    "id": 16,
+    "displayName": "Coal Ore",
+    "name": "coal_ore",
+    "tx": "coal_ore.png",
+    "display": "block",
+    "hardness": 3
+  },
+  {
     "id": 17,
+    "displayName": "Wood",
     "name": "wood",
     "toptx": "wood_top.png",
     "sidetx": "wood.png",
     "btmtx": "wood_top.png",
+    "display": "block",
     "hardness": 2
+  },
+  {
+    "id": 18,
+    "displayName": "Leaves",
+    "name": "leaves",
+    "tx": "leaves.png",
+    "display": "block",
+    "hardness": 0.2,
+    "bc": true,
+    "transparent": true
+  },
+  {
+    "id": 19,
+    "displayName": "Sponge",
+    "name": "sponge",
+    "tx": "sponge.png",
+    "display": "block",
+    "hardness": 0.2
+  },
+  {
+    "id": 20,
+    "displayName": "Glass Block",
+    "name": "glass",
+    "tx": "glass.png",
+    "display": "block",
+    "hardness": 0.2,
+    "transparent": true
+  },
+  {
+    "id": 21,
+    "displayName": "Lapis Lazuli Ore",
+    "name": "lapis_ore",
+    "tx": "lapis_ore.png",
+    "display": "block",
+    "hardness": 0.2
+  },
+  {
+    "id": 22,
+    "displayName": "Lapis Lazuli Block",
+    "name": "lapis_block",
+    "tx": "lapis_block.png",
+    "display": "block",
+    "hardness": 0.2
+  },
+  {
+    "id": 24,
+    "displayName": "Sandstone",
+    "name": "sandstone",
+    "toptx": "sandstone_top.png",
+    "sidetx": "sandstone_normal.png",
+    "btmtx": "sandstone_bottom.png",
+    "display": "block",
+    "hardness": 0.2
   }
 ]
