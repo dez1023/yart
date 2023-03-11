@@ -1,5 +1,12 @@
 [
   {
+    "id": -3,
+    "displayName": "Quagmire",
+    "name": "quag",
+    "tx": "quag.png",
+    "display": null
+  },
+  {
     "id": -2,
     "displayName": "bruh",
     "name": "bruh",
@@ -138,7 +145,7 @@
     "name": "sponge",
     "tx": "sponge.png",
     "display": "block",
-    "hardness": 0.2
+    "hardness": 0.6
   },
   {
     "id": 20,
@@ -146,7 +153,7 @@
     "name": "glass",
     "tx": "glass.png",
     "display": "block",
-    "hardness": 0.2,
+    "hardness": 0.3,
     "transparent": true
   },
   {
@@ -155,7 +162,7 @@
     "name": "lapis_ore",
     "tx": "lapis_ore.png",
     "display": "block",
-    "hardness": 0.2
+    "hardness": 3
   },
   {
     "id": 22,
@@ -163,7 +170,7 @@
     "name": "lapis_block",
     "tx": "lapis_block.png",
     "display": "block",
-    "hardness": 0.2
+    "hardness": 3
   },
   {
     "id": 24,
@@ -173,6 +180,14 @@
     "sidetx": "sandstone_normal.png",
     "btmtx": "sandstone_bottom.png",
     "display": "block",
-    "hardness": 0.2
+    "hardness": 0.8
+  },
+  {
+    "id": 25,
+    "displayName": "Noteblock",
+    "name": "noteblock",
+    "tx": "noteblock.png",
+    "display": "block",
+    "hardness": 0.8
   }
 ]

@@ -92,6 +92,7 @@ let ui = {
       }
 
       let cs = 0
+      let ls = 0
       let db = document.getElementById("ui")
       let sui = ui.div(db)
       sui.classList.add("sui")
@@ -128,6 +129,7 @@ let ui = {
       }
 
       function setScreen(sn) {
+        ls = cs
         if (sn!=null) {
           cs = sn;
           updateScreens();
@@ -135,6 +137,10 @@ let ui = {
           cs = -1;
           updateScreens();
         }
+      }
+
+      function backScreen() {
+        setScreen(ls)
       }
 
       function disable(e) {
@@ -148,4 +154,6 @@ let ui = {
         [], // title
         [], // multiplayer
         [], // options
+        [], // gameOptions
+        [], // controls
       ]

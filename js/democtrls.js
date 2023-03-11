@@ -9,113 +9,111 @@ let ctrls = {
   right: false,
   up: false,
   down: false,
+  mx: 0,
+  my: 0,
   xr: 0,
   yr: 0,
 }
 
-window.onkeydown = function(e) {
-    if (e.which == 65) {
-      ctrls.a = true;
-    }
-    if (e.which == 87) {
+document.addEventListener("keydown", function(e) {
+  e.preventDefault()
+  const k = e.key
+  switch (event.key) {
+    case "w":
       ctrls.w = true;
-    }
-    if (e.which == 68) {
-      ctrls.d = true;
-    }
-    if (e.which == 83) {
+      break;
+    case "a":
+      ctrls.a = true;
+      break;
+    case "s":
       ctrls.s = true;
-    }
-    if (e.which == 69) {
-      ctrls.e = true;
-    }
-    if (e.which == 81) {
+      break;
+    case "d":
+      ctrls.d = true;
+      break;
+    case "q":
       ctrls.q = true;
-    }
-    if (e.which == 37) {
-      ctrls.left = true;
-    }
-    if (e.which == 39) {
-      ctrls.right = true;
-    }
-    if (e.which == 38) {
-      ctrls.up = true;
-    }
-    if (e.which == 40) {
-      ctrls.down = true;
-    }
-  };
-  window.onkeyup = function(e) {
-    if (e.which == 65) {
-      ctrls.a = false;
-    }
-    if (e.which == 87) {
+      break;
+    case "e":
+      ctrls.e = true;
+      break;
+    case "\`":
+      pointerLock(false)
+      setScreen(3);
+      gs.paused = true;
+      break;
+  }
+})
+
+document.addEventListener("keyup", function(e) {
+  const k = e.key
+  switch (event.key) {
+    case "w":
       ctrls.w = false;
-    }
-    if (e.which == 68) {
-      ctrls.d = false;
-    }
-    if (e.which == 83) {
+      break;
+    case "a":
+      ctrls.a = false;
+      break;
+    case "s":
       ctrls.s = false;
-    }
-    if (e.which == 69) {
-      ctrls.e = false;
-    }
-    if (e.which == 81) {
+      break;
+    case "d":
+      ctrls.d = false;
+      break;
+    case "q":
       ctrls.q = false;
-    }
-    if (e.which == 37) {
-      ctrls.left = false;
-    }
-    if (e.which == 39) {
-      ctrls.right = false;
-    }
-    if (e.which == 38) {
-      ctrls.up = false;
-    }
-    if (e.which == 40) {
-      ctrls.down = false;
-    }
-  };
+      break;
+    case "e":
+      ctrls.e = false;
+      break;
+  }
+})
+
+db.addEventListener("mousemove",(e) => {
+  const {
+    movementX,
+    movementY
+  } = e;
+  if (!gs.paused && gs.inGame) {
+    ctrls.mx-=movementY*(gs.sens/100)*0.2
+    ctrls.my-=movementX*(gs.sens/100)*0.2
+  }
+})
 
 function update() {
-  if (ctrls.a) {
-    gameCam.position.x -= 0.1 * Math.sin(((ctrls.yr + 90) * Math.PI) / 180);
-    gameCam.position.z -= 0.1 * Math.cos(((ctrls.yr + 90) * Math.PI) / 180);
-  }
-  if (ctrls.d) {
-    gameCam.position.x += 0.1 * Math.sin(((ctrls.yr + 90) * Math.PI) / 180);
-    gameCam.position.z += 0.1 * Math.cos(((ctrls.yr + 90) * Math.PI) / 180);
-  }
-  if (ctrls.w) {
-    gameCam.position.x -= 0.1 * Math.sin((ctrls.yr * Math.PI) / 180);
-    gameCam.position.z -= 0.1 * Math.cos((ctrls.yr * Math.PI) / 180);
-  }
-  if (ctrls.s) {
-    gameCam.position.x += 0.1 * Math.sin((ctrls.yr * Math.PI) / 180);
-    gameCam.position.z += 0.1 * Math.cos((ctrls.yr * Math.PI) / 180);
-  }
-  if (ctrls.e) {
-    gameCam.position.y += 0.1
-  }
-  if (ctrls.q) {
-    gameCam.position.y -= 0.1
-  }
-  if (ctrls.left) {
-    ctrls.yr += 1;
-  }
-  if (ctrls.right) {
-    ctrls.yr -= 1;
-  }
-  if (ctrls.up) {
-    ctrls.xr += 3;
-  }
-  if (ctrls.down) {
-    ctrls.xr -= 3;
-  }
-  gameCam.rotation.x = dtr(ctrls.xr)
-  gameCam.rotation.y = dtr(ctrls.yr)
   window.requestAnimationFrame(update)
+  if (!gs.paused && gs.inGame) {
+          if (ctrls.a) {
+      gameCam.position.x -= 0.1 * Math.sin(((ctrls.yr + 90) * Math.PI) / 180);
+      gameCam.position.z -= 0.1 * Math.cos(((ctrls.yr + 90) * Math.PI) / 180);
+    }
+    if (ctrls.d) {
+      gameCam.position.x += 0.1 * Math.sin(((ctrls.yr + 90) * Math.PI) / 180);
+      gameCam.position.z += 0.1 * Math.cos(((ctrls.yr + 90) * Math.PI) / 180);
+    }
+    if (ctrls.w) {
+      gameCam.position.x -= 0.1 * Math.sin((ctrls.yr * Math.PI) / 180);
+      gameCam.position.z -= 0.1 * Math.cos((ctrls.yr * Math.PI) / 180);
+    }
+    if (ctrls.s) {
+      gameCam.position.x += 0.1 * Math.sin((ctrls.yr * Math.PI) / 180);
+      gameCam.position.z += 0.1 * Math.cos((ctrls.yr * Math.PI) / 180);
+    }
+    if (ctrls.e) {
+      gameCam.position.y += 0.1
+    }
+    if (ctrls.q) {
+      gameCam.position.y -= 0.1
+    }
+    ctrls.xr = ctrls.mx
+    ctrls.yr = ctrls.my
+    gameCam.rotation.x = dtr(ctrls.xr)
+    gameCam.rotation.y = dtr(ctrls.yr)
+  }
 }
+
+db.addEventListener("click", (e) => {
+  pointerLock(true)
+});
 
 update()

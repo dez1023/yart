@@ -1,6 +1,6 @@
 let blocks
 function getBlock(id) {
-  let block = blocks[1];
+  let block = blocks[2];
   for (let i = 0; i < blocks.length; i++) {
     let obj = blocks[i];
     if (obj.id == id) {
@@ -24,6 +24,7 @@ let e = null
 function runGame() {
   gameCam.aspect = renderer.domElement.clientWidth / renderer.domElement.clientHeight;
   gameCam.updateProjectionMatrix();
+  gameCam.fov = gs.fov
   renderer.setSize(innerWidth, innerHeight);
 };
 
@@ -33,14 +34,14 @@ let models = [
 ]
 
 function preLoad() {
+  function add(t) {
+    let tex = tload.load(assets + "blocks/" + t)
+    tex.magFilter = THREE.NearestFilter;
+    textures.push([t, tex])
+  }
   for (let i = 0; i < blocks.length; i++) {
     let load = null
     let b = blocks[i]
-    function add(t) {
-      let tex = tload.load(assets + "blocks/" + t)
-      tex.magFilter = THREE.NearestFilter;
-      textures.push([t, tex])
-    }
     if (b.tx) {
       add(b.tx)
     }
@@ -65,41 +66,60 @@ function preLoad() {
   }
 }
 
+let createdWorld = false
+
+function pointerLock(t) {
+  if (t && gs.inGame && !gs.paused) {
+    db.requestPointerLock();
+  }else{
+    document.exitPointerLock()
+  }
+}
+
+document.addEventListener("pointerlockchange", function(e) {
+  if (document.pointerLockElement == db) {
+    gs.pointerLock = true;
+  }else{
+    pointerLock(false)
+    setScreen(3);
+    gs.paused = true;
+    gs.pointerLock = true;
+  }
+})
+
 function initSP() {
   setScreen(null)
   setScene(gameScene, gameCam, runGame)
+  gs.inGame = true;
+  gs.paused = false;
+  pointerLock(true)
 
-  let lastblock = blocks[blocks.length - 1].id
-
-
-  for (let i = 0; i < lastblock; i++) {
-    createBlock(i + 1, i - (lastblock * 0.472), 0, 0)
+  if (!createdWorld) {
+    createdWorld = true;
+    genDemo()
   }
+}
 
-  /*
-  for (let z = 0; z < 16; z++) {
-    for (let x = 0; x < 16; x++) {
-      createBlock(2,x,0,z)
-    }
-  }*/
-
-  createBlockFrom(2, -8, -2, -8, 8, -1, 8)
-  createBlockFrom(3, -8, -4, -8, 8, -2, 8)
-  createBlockFrom(1, -8, -14, -8, 8, -4, 8)
-
-  createBlock(-2, 1, 0, 5)
-  createBlock(-2, -1, 0, 5)
-  createBlockFrom(-2, -0.5, 0.5, 4.5, 0.5, 3.5, 5.5)
-
-  gameScene.background = new THREE.Color(0xbef0ff);
-  gameCam.rotation.order = "YXZ"
+function leaveSP() {
+  setScreen(0);
+  setScene(panScene, panCam, renderPan);
+  gs.inGame = false;
+  gs.paused = true;
+  pointerLock(false);
 }
 
 function createBlockFrom(id, x1, y1, z1, x2, y2, z2) {
-  let block = createBlock(id, (x1 + x2) / 2, (y1 + y2) / 2, (z1 + z2) / 2)
-  block.scale.x = x2 - x1;
-  block.scale.y = y2 - y1;
-  block.scale.z = z2 - z1;
+  let block = createBlock(id, (x1 + x2)/2, (y1 + y2)/2, (z1 + z2)/2)
+  //p((x1 + x2)/2, (y1 + y2)/2, (z1 + z2)/2)
+  let sx = round(x2 - x1)
+  let sy = round(y2 - y1)
+  let sz = round(z2 - z1)
+  block.position.x+=0.5
+  block.position.y+=0.5
+  block.position.z+=0.5
+  block.scale.x = sx
+  block.scale.y = sy
+  block.scale.z = sz
   let mat = [null, null, null, null, null, null]
   function fixTx(e, xr, yr) {
     if (e != null) {
@@ -108,23 +128,19 @@ function createBlockFrom(id, x1, y1, z1, x2, y2, z2) {
       ntx.wrapT = THREE.RepeatWrapping;
       ntx.repeat.set(xr, yr)
       ntx.needsUpdate = true
-      mat[e] = new THREE.MeshMatcapMaterial({ map: ntx });
+      mat[e] = new THREE.MeshMatcapMaterial({ map: ntx, matcap: tload.load(assets+"matcap.png") });
       mat[e].color.set(block.material[e].color)
     } else {
       console.log("null")
     }
   }
-  let x = x2 - x1
-  let y = y2 - y1
-  let z = z2 - z1
-  fixTx(0, z, y)
-  fixTx(1, z, y)
-  fixTx(2, x, z)
-  fixTx(3, x, z)
-  fixTx(4, x, y)
-  fixTx(5, x, y)
+  fixTx(0, sz, sy)
+  fixTx(1, sz, sy)
+  fixTx(2, sx, sz)
+  fixTx(3, sx, sz)
+  fixTx(4, sx, sy)
+  fixTx(5, sx, sy)
   block.material = mat
-  //console.log(block.material)
 }
 
 function createBlock(id, x, y, z) {
@@ -138,7 +154,7 @@ function createBlock(id, x, y, z) {
       }
     })
     if (t != null && tex != null) {
-      let mat = new THREE.MeshMatcapMaterial({ map: tex })
+      let mat = new THREE.MeshMatcapMaterial({ map: tex, matcap: tload.load(assets+"matcap.png")  })
       if (b.display == "plant") {
         mat.transparent = true;
         mat.side = THREE.DoubleSide
