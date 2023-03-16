@@ -4,4 +4,5 @@ let gs = {
   pointerLock: false,
   fov: 70,
   sens: 100,
+  debugMode: false,
 }

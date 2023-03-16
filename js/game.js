@@ -28,7 +28,7 @@ function runGame() {
   renderer.setSize(innerWidth, innerHeight);
 };
 
-let textures = []
+let textures = [["matcap.png",tload.load(assets+"matcap.png")]]
 let models = [
   "blocks/plant.gltf"
 ]
@@ -87,16 +87,16 @@ document.addEventListener("pointerlockchange", function(e) {
   }
 })
 
-function initSP() {
+function initSP(demo) {
   setScreen(null)
   setScene(gameScene, gameCam, runGame)
   gs.inGame = true;
   gs.paused = false;
   pointerLock(true)
-
-  if (!createdWorld) {
-    createdWorld = true;
+  if (demo) {
     genDemo()
+  }else{
+    genWorld()
   }
 }
 
@@ -106,6 +106,7 @@ function leaveSP() {
   gs.inGame = false;
   gs.paused = true;
   pointerLock(false);
+  delWorld();
 }
 
 function createBlockFrom(id, x1, y1, z1, x2, y2, z2) {
@@ -128,7 +129,7 @@ function createBlockFrom(id, x1, y1, z1, x2, y2, z2) {
       ntx.wrapT = THREE.RepeatWrapping;
       ntx.repeat.set(xr, yr)
       ntx.needsUpdate = true
-      mat[e] = new THREE.MeshMatcapMaterial({ map: ntx, matcap: tload.load(assets+"matcap.png") });
+      mat[e] = new THREE.MeshMatcapMaterial({ map: ntx, matcap: textures[0][1] });
       mat[e].color.set(block.material[e].color)
     } else {
       console.log("null")
@@ -154,7 +155,7 @@ function createBlock(id, x, y, z) {
       }
     })
     if (t != null && tex != null) {
-      let mat = new THREE.MeshMatcapMaterial({ map: tex, matcap: tload.load(assets+"matcap.png")  })
+      let mat = new THREE.MeshMatcapMaterial({ map: tex, matcap: textures[0][1]  })
       if (b.display == "plant") {
         mat.transparent = true;
         mat.side = THREE.DoubleSide

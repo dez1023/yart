@@ -14,18 +14,20 @@
   <script src="js/gltfloader.js"></script>
   <script src="js/main.js"></script>
   <script src="js/render.js"></script>
-  <script src="js/sgui.js"></script>
+  <script src="js/GUImain.js"></script>
+  <script src="js/gameSettings.js"></script>
+  <script src="js/debug.js"></script>
   <script src="js/math.js"></script>
   <script src="js/panorama.js"></script>
+  <script src="js/noise.js"></script>
   <script src="js/genWorld.js"></script>
   <script src="js/game.js"></script>
   <script src="js/democtrls.js"></script>
-  <script src="js/gameSettings.js"></script>
   <script src="js/GUItitle.js"></script>
+  <script src="js/GUIworlds.js"></script>
   <script src="js/GUIsettings.js"></script>
   <script src="js/GUIgameSettings.js"></script>
   <script src="js/GUIcontrols.js"></script>
-  <script src="js/debug.js"></script>
   <script src="js/customBtns.js"></script>
 </body>
 

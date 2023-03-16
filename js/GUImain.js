@@ -152,7 +152,7 @@ let ui = {
 
       let s = [
         [], // title
-        [], // multiplayer
+        [], // worlds
         [], // options
         [], // gameOptions
         [], // controls

@@ -3,13 +3,15 @@ const scripts = [
   "gltfloader", 
   "render", 
   "math", 
+  "gameSettings", 
+  "debug",
   "panorama", 
+  "noise",
   "genWorld",
   "game", 
   "democtrls", 
-  "gameSettings", 
-  "debug",
   "GUItitle", 
+  "GUIworlds",
   "GUIsettings",
   "GUIgameSettings",
   "GUIcontrols",
@@ -26,8 +28,10 @@ loadBar.style = "position: fixed; left: 50%; top: 80%; transform: translate(-50%
 if (window.location.href == "https://c3b4a72c-81fb-43cb-bb2d-d5eb5878ec7c.id.repl.co/") {
 window.location = "https://yart.rfs2iscool.repl.co/debug";
 }else{
-  loadScript(0);
-  console.log("Loading " + scripts.length + " scripts")
+  if (window.location != "https://yart.rfs2iscool.repl.co/debug") {
+    loadScript(0);
+    console.log("Loading " + scripts.length + " scripts")
+  }
 }
 
 function loadScript(i) {

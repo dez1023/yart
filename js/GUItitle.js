@@ -23,21 +23,11 @@
           spltxt.classList.add("splash")
         })
 
-      ui.bbtn("Singleplayer", sui, 0, initSP);
-      disable(ui.bbtn("Multiplayer", sui, 0, function() {
-        setScreen(1)
-      }))
+      ui.bbtn("Singleplayer", sui, 0, function(){setScreen(1)});
+      disable(ui.bbtn("Multiplayer", sui, 0, n))
 disable(ui.bbtn("Minecraft Realms", sui, 0, n))
 
       let tsbtns = ui.btns(sui, 0, "sbtn", "Options...", function() {setScreen(2)}, "sbtn", "Quit Game", function() {window.close()});
       tsbtns.style.marginTop = "50px"
       ui.ssbtn(sui,0,n,assets+"gui/ssicons.png",0,1);
       ui.ssbtn(sui,0,n,assets+"gui/ssicons.png",-40,2);
-
-      // servers
-      ui.txt("Play Multiplayer", sui, 1, 16);
-      ui.txt("multiplayer deez nuts", sui, 1);
-      ui.bbtn("Done", sui, 1, function() {
-        setScreen(0)
-      });
-      //let test = ui.sli("test", sui, 3)
