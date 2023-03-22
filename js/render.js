@@ -23,10 +23,19 @@ function setScene(scene,cam,f) {
   renderFunc = f
 }
 
+let FPSbefore = Date.now()/1000
+
 function render() {
+  gs.FPS = (1/((Date.now()/1000)-FPSbefore)).toFixed(0)
+  FPSbefore = Date.now() /1000
   window.requestAnimationFrame(render)
-  renderer.render(currentScene, currentCam)
-  renderFunc()
+  if ((!gs.paused && gs.inGame)||(gs.paused && !gs.inGame)) {
+    gs.rendering = true
+    renderer.render(currentScene, currentCam)
+    renderFunc()
+  }else{
+    gs.rendering = false
+  }
 }
 
 render()

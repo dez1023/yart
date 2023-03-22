@@ -13,9 +13,9 @@
   <script src="js/three.js"></script>
   <script src="js/gltfloader.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/gameSettings.js"></script>
   <script src="js/render.js"></script>
   <script src="js/GUImain.js"></script>
-  <script src="js/gameSettings.js"></script>
   <script src="js/debug.js"></script>
   <script src="js/math.js"></script>
   <script src="js/panorama.js"></script>

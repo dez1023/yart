@@ -90,6 +90,8 @@ document.addEventListener("pointerlockchange", function(e) {
 function initSP(demo) {
   setScreen(null)
   setScene(gameScene, gameCam, runGame)
+  gameCam.position.set(0, 0, 0);
+  gameCam.rotation.set(0, 0, 0);
   gs.inGame = true;
   gs.paused = false;
   pointerLock(true)

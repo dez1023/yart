@@ -38,9 +38,11 @@ document.addEventListener("keydown", function(e) {
       ctrls.e = true;
       break;
     case "\`":
-      pointerLock(false)
-      setScreen(3);
-      gs.paused = true;
+      if (gs.inGame) {
+        pointerLock(false)
+        setScreen(3);
+        gs.paused = true;
+      }
       break;
   }
 })

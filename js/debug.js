@@ -18,6 +18,9 @@ window.onerror = function(error, source, lnum, cnum, obj) {
 }
 
 function p(a, b, c) {
+  if (!a) {
+    a = "null"
+  }
   console.log(a, b, c)
   printCount++
   pOutput.style.display = "inline"
@@ -35,10 +38,12 @@ function updateDebug() {
     debugleft.innerHTML += "<br>"+t+": "+v+""
   }
   window.requestAnimationFrame(updateDebug)
-  debugleft.innerHTML = "---Debug---"
+  debugleft.innerHTML = "<b>---Debug---</b>"
   a("inGame",gs.inGame)
   a("paused",gs.paused)
   a("pointerLock",gs.pointerLock)
+  a("Rendering: ",gs.rendering)
+  a("FPS",gs.FPS)
 }
 
 updateDebug()

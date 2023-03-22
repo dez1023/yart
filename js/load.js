@@ -1,9 +1,9 @@
 const scripts = [
   "three", 
   "gltfloader", 
+  "gameSettings", 
   "render", 
   "math", 
-  "gameSettings", 
   "debug",
   "panorama", 
   "noise",
